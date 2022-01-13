@@ -1,0 +1,52 @@
+<div class="create_account">
+    <div class="col-md w-50 my-5 mx-auto">
+        <div class="row">
+            <form class="card w-100" [formGroup]="create_new_user" method="POST" (submit)="f_create_user()">
+                <div class="card-header text-center">Creer un compte</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col">
+                            <label for="Prenom">Prenom</label>
+                            <input type="text" formControlName="firstName" class="form-control" id="Prenom" placeholder="Prenom">
+                        </div>
+                        
+                        <div class="col">
+                            <label for="Nom">Nom</label>
+                            <input type="text" formControlName="lastName" class="form-control" id="Nom" placeholder="Nom">
+                        </div>
+                      </div>
+                    <div class="form-group">
+                        <label for="Utilisateur">Utilisateur</label>
+                        <input type="text" formControlName="userName" class="form-control" id="Utilisateur" placeholder="Utilisateur">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Email">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" formControlName="password" class="form-control" id="password" placeholder="Mot de passe">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="City">City</label>
+                        <input type="text" formControlName="city" class="form-control" id="City" placeholder="City">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="Tel">Telephone</label>
+                        <input type="number" formControlName="phoneNumber" class="form-control" id="Tel" placeholder="Telephone">
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    </div>
+                    
+                </div>
+                <div class="d-flex justify-content-between card-footer text-muted">
+                    <a class="text-primary" routerLink="/login"><b>Connexion</b></a>
+                    <button class="btn btn-success" [disabled]='create_new_user.invalid' type="submit">Creer un compte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

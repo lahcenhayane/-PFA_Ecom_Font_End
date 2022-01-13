@@ -1,0 +1,46 @@
+<div id="sibebar" class="sibebar">
+    <div class="sibebar_header">
+        Application
+    </div>
+
+    <div class="divider"></div>
+    <div class="sibebar_body">
+        <a class="sibebar_body_item" routerLink="/dashboard">
+            <i class='bx bxs-dashboard'></i>
+            <div class="sibebar_body_item_text">Dashboard</div>
+            <i class='bx bx-right-arrow-alt' ></i>
+        </a>
+        <a class="sibebar_body_item" routerLink="/dashboard/group">
+            <i class='bx bxs-user'></i>
+            <div class="sibebar_body_item_text">Groupes</div>
+            <i class='bx bx-right-arrow-alt' ></i>
+        </a>
+        <a class="sibebar_body_item" routerLink="/dashboard/membre">
+            <i class='bx bxs-group' ></i>
+            <div class="sibebar_body_item_text">Membres</div>
+            <i class='bx bx-right-arrow-alt' ></i>
+        </a>
+        <a class="sibebar_body_item" href="">
+            <i class='bx bxs-dashboard'></i>
+            <div class="sibebar_body_item_text">Dashboard</div>
+            <i class='bx bx-right-arrow-alt' ></i>
+        </a>
+        <a class="sibebar_body_item" href="">
+            <i class='bx bxs-dashboard'></i>
+            <div class="sibebar_body_item_text">Dashboard</div>
+            <i class='bx bx-right-arrow-alt' ></i>
+        </a>
+    </div>
+    
+    <div class="divider"></div>
+    <div class="sibebar_footer">
+        <div class="sibebar_footer_info">
+            <img src="../../../../assets/img/ivana-square.jpg">
+            <div class="sibebar_footer_info_text">
+                <span>{{ username | titlecase }}</span>
+                <!-- <span>Role</span> -->
+            </div>
+        </div>
+        <button class="btn" type="button"><i class='bx bx-log-out-circle'></i></button>
+    </div>
+</div>
