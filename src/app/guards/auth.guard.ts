@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot):Observable<boolean> | boolean {
+    state: RouterStateSnapshot):boolean {
       
       if (!this._token.isValid()) {
         this._token.removeToken()

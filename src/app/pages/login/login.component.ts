@@ -20,10 +20,11 @@ export class LoginComponent implements OnInit {
               private _route:Router) { }
 
   ngOnInit(): void {
+    
   }
 
   formLogin = new FormGroup({
-    username: new FormControl(null),
+    email: new FormControl(null),
     password: new FormControl(null)
   })
 
@@ -36,7 +37,6 @@ export class LoginComponent implements OnInit {
 
   token(res:any){
     console.log(res);
-    
     this._token.saveToken(res);
     this._account.setAccount(true);
     this._route.navigateByUrl("/dashboard")

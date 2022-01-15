@@ -13,8 +13,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { SidebarComponent } from './components/dashboard/sidebar/sidebar.component';
 import { NavbarDashboardComponent } from './components/dashboard/navbar-dashboard/navbar-dashboard.component';
 import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
-import { GroupDashboardComponent } from './components/dashboard/group-dashboard/group-dashboard.component';
-import { JwtInterceptor } from './services/jwt.interceptor';
+import { JwtInterceptor } from './jwt.interceptor';
+import { HeaderComponent } from './components/dashboard/header/header.component';
+import { UsersDashboardComponent } from './components/dashboard/users-dashboard/users-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     SidebarComponent,
     NavbarDashboardComponent,
     HomeDashboardComponent,
-    GroupDashboardComponent
+    HeaderComponent,
+    UsersDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +39,9 @@ import { JwtInterceptor } from './services/jwt.interceptor';
   ],
   providers: [
     {
-      provide:HTTP_INTERCEPTORS,
-      useClass:JwtInterceptor,
-      multi:true
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
     }
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,33 @@
+.home_dashboard{
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.home_dashboard_item{
+    flex: 1;
+    margin: 0 4px;
+    border: 1px solid rgb(231, 231, 231);
+    padding: 6px;
+    border-radius: 6px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+}
+.home_dashboard_item_header{
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid whitesmoke;
+}
+.home_dashboard_item_body{
+    display: flex;
+    flex-direction: column;
+    
+}
+.home_dashboard_item_body_item{
+    border-bottom: 1px solid whitesmoke;
+    padding: 4px 0;
+    
+}

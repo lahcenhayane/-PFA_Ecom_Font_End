@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/auth/token.service';
 
 
 @Component({
@@ -8,13 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarDashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _token:TokenService, private route:Router) { }
 
   ngOnInit(): void {
   }
 
-  hidden(){
-    
+  logout(){
+    this._token.removeToken()
+    this.route.navigateByUrl('/login')
   }
 
 }

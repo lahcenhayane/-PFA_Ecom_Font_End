@@ -16,19 +16,21 @@ export class CreateaAccountComponent implements OnInit {
   }
 
   create_new_user = new FormGroup({
-    firstName:new FormControl("", [Validators.required]),
-    lastName:new FormControl("", [Validators.required]),
-    userName:new FormControl("", [Validators.required]),
+    firstname:new FormControl("", [Validators.required]),
+    lastname:new FormControl("", [Validators.required]),
+    username:new FormControl("", [Validators.required]),
     email:new FormControl("", [Validators.required, Validators.email]),
     password:new FormControl("", [Validators.required]),
     city:new FormControl("", [Validators.required]),
-    phoneNumber:new FormControl("", [Validators.required]),
+    phone:new FormControl("", [Validators.required]),
   })
 
   f_create_user(){
     if (this.create_new_user.valid) {
       this._user.f_create(this.create_new_user.value).subscribe(
-        res=>this._route.navigateByUrl("/login"),
+        res=>{
+          this._route.navigateByUrl("/login")
+        },
         err=>console.log(err)
       )  
     }

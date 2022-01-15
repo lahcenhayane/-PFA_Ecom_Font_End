@@ -13,16 +13,21 @@ export class TokenService {
   saveToken(data:any){
     localStorage.setItem("token", data.Authorization)
     localStorage.setItem("username", data.username)
+    localStorage.setItem("user", data.user)
   }
   removeToken(){
     localStorage.removeItem("token")
     localStorage.removeItem("username")
+    localStorage.removeItem("user")
   }
   getToken(){
     return localStorage.getItem("token");
   }
   getUsername(){
     return localStorage.getItem("username");
+  }
+  getUser(){
+    return localStorage.getItem("user");
   }
 
   getPayload(token:string){
@@ -32,10 +37,11 @@ export class TokenService {
 
   isValid(){
     const token = this.getToken();
+    const username = this.getUsername();
     if(token){
       const payload = this.getPayload(token);
-      if(payload && (payload == this.getUsername())){
-        return true;
+      if(payload){
+        return payload.sub == username;
       }
       return false;  
     }

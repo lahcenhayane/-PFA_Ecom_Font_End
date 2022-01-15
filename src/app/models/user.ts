@@ -1,11 +1,16 @@
+import { Order } from "./order";
+import { Role } from "./role";
+
 export interface User {
     id?:number,
-    firstName:string,
-    lastName:string,
-    userName:string,
+    firstname:string,
+    lastname:string,
+    username:string,
     email:string,
     password:string,
     city:string,
-    phoneNumber:string,
-    // accounts:[]
+    phone:string,
+    enabled:Boolean,
+    roles?:Role[],
+    orders?:Order[]
 }

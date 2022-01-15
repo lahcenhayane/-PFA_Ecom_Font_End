@@ -11,7 +11,7 @@ export class UserService {
 
   private readonly url:string = environment.URL;
 
-  f_create(user:any){
-    return this._http.post(`${this.url}/v1/users`, user);
+  f_create(data:any){
+    return this._http.post(`${this.url}/users`, data)
   }
 }

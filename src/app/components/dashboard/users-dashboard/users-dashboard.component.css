@@ -1,0 +1,41 @@
+.tree{
+    margin-bottom: 20px;
+}
+.users{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+}
+.users_header{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 6px 6px 0 0;
+    padding: 0 8px;
+    align-items: center;
+    margin-bottom: 3px;
+}
+
+.users_header_search{
+    display: flex;
+    align-items: center;
+    background-color: #F1F3FA;
+    padding: 0 4px;
+}
+.users_header_search>i{
+    padding: 0 3px;
+}
+.users_header_search>input{
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: inherit;
+    
+}
+
+.users_body{
+    background-color: white;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 0 0 6px 6px;
+}

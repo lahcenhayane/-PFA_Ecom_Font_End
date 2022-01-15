@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GroupDashboardComponent } from './components/dashboard/group-dashboard/group-dashboard.component';
 import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
+import { UsersDashboardComponent } from './components/dashboard/users-dashboard/users-dashboard.component';
 import { AfterauthGuard } from './guards/afterauth.guard';
 import { AuthGuard } from './guards/auth.guard';
 import { CreateaAccountComponent } from './pages/createa-account/createa-account.component';
@@ -10,17 +10,17 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-  { path:"login", component:LoginComponent},
-  { path:"singout", component:CreateaAccountComponent},
+  { path:"login", component:LoginComponent, canActivate:[AfterauthGuard]},
+  { path:"singout", component:CreateaAccountComponent, canActivate:[AfterauthGuard]},
   { path:"", component:HomeComponent},
   {
     path:"dashboard",
     children:[
       { path:"", component:HomeDashboardComponent},
-      // { path:"membre", component:UserDashboardComponent},
-      { path:"group", component:GroupDashboardComponent},
+      { path:"users", component:UsersDashboardComponent},
     ],
-    component:DashboardComponent
+    component:DashboardComponent,
+    canActivate:[AuthGuard]
   },
   { path:"**", component:HomeComponent }
 ];
