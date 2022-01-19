@@ -1,4 +1,12 @@
+a{
+    text-decoration: none;
+    color: black;
+}
 .tree{
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid rgb(231, 231, 231);
     margin-bottom: 20px;
 }
 .users{
@@ -35,7 +43,94 @@
 }
 
 .users_body{
+    background-color: inherit;
+    border: 1px solid rgb(231, 231, 231);
+    border-radius: 0 0 6px 6px;
+    overflow-y: scroll;
+    height: 400px;
+}
+.users_body_items{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+.users_body_items:last-child{
+    margin-bottom: 0;
+}
+.users_body_items_start{
+    display: flex;
+    flex: 1;
+    padding: 5px;
+    align-items: center;
+}
+.users_body_items_start>i{
+    font-size: 100px;
+    color: white;
+    background-color: #17A2B8;
+}
+.users_body_item{
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+.users_body_item_midlele_info{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.users_body_item_midlele_info>i{
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+.users_body_items_end{
+    display: flex;
+    flex-direction: column;
+}
+.users_body_items_end > button{
+    padding: 8px 20px;
+}
+.users_body_items_end>button{
+    background-color: #DC3545;
+    color: white;
+    border: none;
+}
+.users_body_items_end>a{
+    text-align: center;
+    color: white;
+    padding: 9px;
+}
+.users_body_items_end> .blue{
+    background-color: #FFC107;
+}
+.users_body_items_end> .green{
+    background-color: #28A745;
+}
+
+.users_footer{
+    display: flex;
     background-color: white;
     border: 1px solid rgb(231, 231, 231);
     border-radius: 0 0 6px 6px;
+    margin-top: 3px;
+    padding: 0 8px;
+    justify-content: center;
+    align-items: center;
+}
+.users_footer>span{
+    margin: 0 20px;
+}
+.users_footer>a{
+    background-color: #28A745;
+    padding: 6px 15px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+.users_footer>a:first-child{
+    background-color: #DC3545;
+}
+.users_footer>a>i{
+    font-size: 20px;
 }

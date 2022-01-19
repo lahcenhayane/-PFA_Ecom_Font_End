@@ -1,4 +1,4 @@
-<div class="tree">Dashdoard / <b>Utilisateur</b></div>
+<div class="tree"><a routerLink="/dashboard"><b>Dashdoard</b></a> / Utilisateur</div>
 <app-header></app-header>
 
 <div class="users">
@@ -6,10 +6,72 @@
         <h3>Utilisateurs</h3>
         <div class="users_header_search">
             <i class='bx bx-search-alt-2'></i>
-            <input type="text" placeholder="Search by ID">
+            <input (keyup)="searchByID($event)" type="text" placeholder="Search by ID">
         </div>
     </div>
     <div class="users_body">
-        
+        <div class="users_body_items"
+            *ngFor="let item of users.content"    
+        >
+            <!-- <span *ngIf="item == null">No data ...</span> -->
+            <div class="users_body_items_start">
+                <i class='bx bxs-user'></i>
+                <div class="users_body_item">
+                    <div class="users_body_item_midlele_start">
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxs-id-card'></i>
+                            #{{ item.id }}
+                        </div>
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxs-user-circle' ></i>
+                            {{ item.firstname +" "+item.lastname }}
+                        </div>
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxl-gmail' ></i>
+                            {{ item.email }}
+                        </div>
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxs-phone' ></i>
+                            {{ item.phone}}
+                        </div>
+                        
+                    </div>
+                    <div class="users_body_item_midlele_end">
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxs-user-rectangle'></i>
+                            Admin
+                        </div>
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxs-city' ></i>
+                            {{ item.city }}
+                        </div>
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bxs-shopping-bag' ></i>
+                            Totat de commande : 200
+                        </div>
+                        <div class="users_body_item_midlele_info">
+                            <i class='bx bx-money' ></i>
+                            Totat d'argent : 200$
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="users_body_items_end">
+                <a class="blue" [routerLink]="['/dashboard/details', item.id]">Details</a>
+                <a class="green" [routerLink]="['/dashboard']">Modifier</a>
+                <button (click)="delete(item.id, item.email)" type="button">Supprimer</button>
+                
+            </div>
+        </div>
+    </div>
+    <div class="users_footer">
+        <a [routerLink]="['/dashboard/users']" [queryParams]="{p: (users.number)-1}" [target]="users.number > -1 ? '_parent':'_self'"><i class='bx bxs-left-arrow-alt' ></i> Previous</a>
+        <span>page: {{ users.number++1 }}</span>
+        <a [routerLink]="['/dashboard/users']" [queryParams]="{p: (users.number)+1}" [target]="users.number > -1 ? '_parent':'_self'">Next <i class='bx bxs-right-arrow-alt' ></i></a>
     </div>
 </div>
+
+
+  
+  
+  

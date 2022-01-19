@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +19,7 @@ import { HomeDashboardComponent } from './components/dashboard/home-dashboard/ho
 import { JwtInterceptor } from './jwt.interceptor';
 import { HeaderComponent } from './components/dashboard/header/header.component';
 import { UsersDashboardComponent } from './components/dashboard/users-dashboard/users-dashboard.component';
+import { DetailsDashboardComponent } from './components/dashboard/details-dashboard/details-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +34,15 @@ import { UsersDashboardComponent } from './components/dashboard/users-dashboard/
     HomeDashboardComponent,
     HeaderComponent,
     UsersDashboardComponent,
+    DetailsDashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     {

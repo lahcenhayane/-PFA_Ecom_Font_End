@@ -1,0 +1,76 @@
+<div class="details">
+    <div class="tree"><a routerLink="/dashboard"><b>Dashdoard</b></a> / <a routerLink="/dashboard/users"><b>Utilisateur</b></a> / Details - {{ user.email }} </div>
+    <div class="details_body">
+        <div class="details_body_user">
+            <div class="details_body_user_image">
+                <img src="../../../../assets/img/ivana-square.jpg" alt="">
+            </div>
+            <div class="details_body_user_starts">
+                <div class="details_body_user_start">
+                    <div class="details_body_user_start_info">
+                        <i class='bx bxs-id-card'></i>
+                        #{{ user.id }}
+                    </div>
+                    <div class="details_body_user_start_info">
+                        <i class='bx bxs-user'></i>
+                        {{ user.firstname }}
+                    </div>
+                    <div class="details_body_user_start_info">
+                        <i class='bx bxs-user'></i>
+                        {{ user.lastname }}
+                    </div>
+                    <div class="details_body_user_start_info">
+                        <i class='bx bxs-user-rectangle' ></i>
+                        {{ user.username }}
+                    </div>
+                </div>
+                <div class="details_body_user_midlle">
+                    <div class="details_body_user_start_info">
+                        <i class='bx bxl-gmail' ></i>
+                        {{ user.email }}
+                    </div>
+                    <div class="users_body_item_midlele_info">
+                        <i class='bx bxs-phone' ></i>
+                        {{ user.phone }}
+                    </div>
+                    <div class="users_body_item_midlele_info">
+                        <i class='bx bxs-user-rectangle'></i>
+                        <span *ngFor="let item of user.roles">{{ item.name+' - '}} </span>
+                    </div>
+                    <div class="users_body_item_midlele_info">
+                        <i class='bx bxs-city' ></i>
+                        {{ user.city }}
+                    </div>
+                </div>
+                <div class="details_body_user_end">
+                    <a href=""><i class='bx bxs-message-square-edit'></i></a>
+                    <button type="button"><i class='bx bxs-trash'></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="details_body_order">
+            <div class="details_body_order_header">
+                <i class='bx bxs-shopping-bag' ></i> Les commandes
+            </div>
+            <div class="details_body_order_midlle">
+                <div class="details_body_order_midlle_item"
+                    *ngFor="let item of orders.content">
+                    <div class="details_body_order_midlle_item_start">
+                        <i class='bx bxs-shopping-bags'></i>
+                    </div>
+                    <div class="details_body_order_midlle_item_midlle">
+                        <span class="id">#{{ item.id }}</span>
+                        <span class="address">{{ item.address.address }} - {{ item.address.ville }} - {{ item.address.zipcode }} - {{ item.address.pays }}</span>
+                        <span class="total">{{ item.total }}DH</span>
+                    </div>
+                    <div class="details_body_order_midlle_item_end">
+                        <a href="http://"><i class='bx bxs-right-arrow-circle' ></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="details_body_order_footer">
+                <i class='bx bxs-shopping-bag' ></i> Les commandes
+            </div>
+        </div>
+    </div>
+</div>

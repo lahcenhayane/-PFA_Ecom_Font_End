@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DetailsDashboardComponent } from './components/dashboard/details-dashboard/details-dashboard.component';
 import { HomeDashboardComponent } from './components/dashboard/home-dashboard/home-dashboard.component';
 import { UsersDashboardComponent } from './components/dashboard/users-dashboard/users-dashboard.component';
 import { AfterauthGuard } from './guards/afterauth.guard';
@@ -18,6 +19,9 @@ const routes: Routes = [
     children:[
       { path:"", component:HomeDashboardComponent},
       { path:"users", component:UsersDashboardComponent},
+      { path:"users?p=0", component:UsersDashboardComponent},
+
+      { path:"details/:id", component:DetailsDashboardComponent},
     ],
     component:DashboardComponent,
     canActivate:[AuthGuard]

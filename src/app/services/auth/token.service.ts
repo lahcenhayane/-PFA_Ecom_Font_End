@@ -51,7 +51,7 @@ export class TokenService {
     const token = this.getToken();
     if(token){
       const payload = this.getPayload(token);
-      return payload ? payload : this.removeToken();
+      return payload ? payload.sub : this.removeToken();
     }
     return this.removeToken();
   }
